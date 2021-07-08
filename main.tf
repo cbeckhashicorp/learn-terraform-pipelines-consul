@@ -18,6 +18,10 @@ terraform {
   }
 }
 
+provider "aws" {
+  region = "us-east-2"
+}
+
 data "terraform_remote_state" "cluster" {
   backend = "remote"
   config = {
