@@ -31,7 +31,10 @@ data "terraform_remote_state" "cluster" {
 data "terraform_remote_state" "eks" {
   backend = "local"
   config = {
-    path = "../learn-terraform-provision-eks-cluster/terraform.tfstate"
+    organization = var.organization
+    workspaces = {
+      name = var.cluster_workspace
+    }
   }
 }
 
