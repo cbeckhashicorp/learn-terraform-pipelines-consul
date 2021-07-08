@@ -29,7 +29,7 @@ data "terraform_remote_state" "cluster" {
 }
 
 data "terraform_remote_state" "eks" {
-  backend = "local"
+  backend = "remote"
   config = {
     organization = var.organization
     workspaces = {
